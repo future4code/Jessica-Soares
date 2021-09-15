@@ -1,0 +1,2 @@
+# Aprendizados da semana
+Esta semana na Labenu estou começando a aprender comandos para usar no Git Bash, já aprendi que não é fácil, mas ficar ansiosa não vai ajudar. **Sendo assim, vou tentar manter calma.**
