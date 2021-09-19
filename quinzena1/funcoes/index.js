@@ -99,9 +99,11 @@ maiorOuIgual(30, 10)
 
 function numeroPar (numero1){
     const par = numero1 %2 === 0
-    console.log(numeroPar)
+    console.log(par)
+}
 
-numeroPar (33)
+numeroPar ()
+
 
 /*
 d) Faça uma função que recebe uma mensagem (string) como parâmetro e imprima o tamanho dessa mensagem, 
