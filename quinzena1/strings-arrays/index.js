@@ -34,7 +34,7 @@ alert (`O e-mail ${emailDoUsuario} foi cadastrado com sucesso. Seja bem-vinda(o)
 
 === Resposta Atividade 2 ===
 
-=== Atividade 2.a === 
+=== Atividade 2.a ===
 
 */
 
@@ -42,10 +42,10 @@ array = ["Bolo", " Sorvete", " Chocolate", " Pizza", " Pastel"];
 alert (array);
 
 /*
-=== Atividade 2.b (não consegui imprimir a array na tela) ===
-=== Como havia feito: ===
+=== Atividade 2.b (como havia feito) ===
+*/
 
-const comida = [
+let comida = [
 "Bolo", 
 "Sorvete", 
 "Chocolate", 
@@ -53,44 +53,42 @@ const comida = [
 "Pastel"
 ];
 
-alert ("Essas são as minhas comidas preferidas:" , comida [0, 1, 2, 3, 4]);
-
-Correto:
-*/
-
-const listaComidas = ["Bolo", "Sorvete", "Chocolate", "Pizza", "Pastel"];
-    
-    console.log ("Essas são as minhas comidas preferidas:");
-    console.log (comida[0]);
-    console.log (comida[1]);
-    console.log (comida[2]);
-    console.log (comida[3]);
-    console.log (comida[4]);
+alert (`Essas são as minhas comidas preferidas: ${comida[0]}, ${comida[1]}, ${comida[2]}, ${comida[3]}, ${comida[4]}`);
+/*Imprime na mesma linha/ um ao lado do outro*/
+alert ("Essas são as minhas comidas preferidas:", comida[0], comida[1], comida[2], comida[3], comida[4]);
+/*Não imprime as comidas*/
 
 /*
-=== Atividade 2.c (não consegui imprimir array na tela) ===
-=== Como havia feito: ===
+=== Atividade 2.b (como deve ser) ===
+*/
 
+let comida = ["Bolo", "Sorvete", "Chocolate", "Pizza", "Pastel"];
+
+console.log ("Essas são as minhas comidas preferidas:");
+console.log (comida [0]);
+console.log (comida [1]);
+console.log (comida [2]);
+console.log (comida [3]);
+console.log (comida [4]);
+
+/*
+=== Atividade 2.c (como havia feito) ===
+*/
 
 const listaComidas = ["Bolo", " Sorvete", " Chocolate", " Pizza", " Pastel"];
 const comidaFavorita = prompt ("Qual sua comida favorita?");
 const novaLista = listaComidas.replaceAll (" Sorvete", comidaFavorita);
-console.log (novaLista);
+alert (novaLista);
+/*replaceAll é um método de string, não de array*/
 
-Correto:
+/*
+=== Atividade 2.c (como deve ser) ===
 */
 
 const listaComidas = ["Bolo", " Sorvete", " Chocolate", " Pizza", " Pastel"];
 const comidaFavorita = prompt ("Qual sua comida favorita?");
-listaComidas [1] = comidaFavorita;
-console.log (listaComidas);
-
-//Também é possível fazer com o alert:
-
-const listaComidas = ["Bolo", " Sorvete", " Chocolate", " Pizza", " Pastel"];
-const comidaFavorita = prompt ("Qual sua comida favorita?");
-listaComidas [1] = comidaFavorita;
-alert (listaComidas);
+listaComidas[1] = comidaFavorita;
+console.log(listaComidas);
 
 /*
 === Resposta Atividade 3 ===
@@ -105,7 +103,9 @@ const listaDeTarefas = [tarefa1, tarefa2, tarefa3];
 alert (listaDeTarefas);
 
 
-//=== Atividades 3.d/ 3.e/ 3.f ===
+/*
+=== Atividades 3.d/ 3.e/ 3.f ===
+*/
 
 const indiceTarefa = prompt ("Escolha o índice de uma atividade já realizada (entre 0, 1 e 2)");
 listaDeTarefas.splice(indiceTarefa, 1); 
