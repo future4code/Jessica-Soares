@@ -43,9 +43,9 @@ alert (array);
 
 /*
 === Atividade 2.b (não consegui imprimir a array na tela) ===
-*/
+=== Como havia feito: ===
 
-let comida = [
+const comida = [
 "Bolo", 
 "Sorvete", 
 "Chocolate", 
@@ -53,17 +53,44 @@ let comida = [
 "Pastel"
 ];
 
-alert ("Essas são as minhas comidas preferidas:", comida [0, 1, 2, 3, 4]);
+alert ("Essas são as minhas comidas preferidas:" , comida [0, 1, 2, 3, 4]);
+
+Correto:
+*/
+
+const listaComidas = ["Bolo", "Sorvete", "Chocolate", "Pizza", "Pastel"];
+    
+    console.log ("Essas são as minhas comidas preferidas:");
+    console.log (comida[0]);
+    console.log (comida[1]);
+    console.log (comida[2]);
+    console.log (comida[3]);
+    console.log (comida[4]);
 
 /*
 === Atividade 2.c (não consegui imprimir array na tela) ===
-*/
+=== Como havia feito: ===
+
 
 const listaComidas = ["Bolo", " Sorvete", " Chocolate", " Pizza", " Pastel"];
 const comidaFavorita = prompt ("Qual sua comida favorita?");
 const novaLista = listaComidas.replaceAll (" Sorvete", comidaFavorita);
-alert (novaLista);
+console.log (novaLista);
 
+Correto:
+*/
+
+const listaComidas = ["Bolo", " Sorvete", " Chocolate", " Pizza", " Pastel"];
+const comidaFavorita = prompt ("Qual sua comida favorita?");
+listaComidas [1] = comidaFavorita;
+console.log (listaComidas);
+
+//Também é possível fazer com o alert:
+
+const listaComidas = ["Bolo", " Sorvete", " Chocolate", " Pizza", " Pastel"];
+const comidaFavorita = prompt ("Qual sua comida favorita?");
+listaComidas [1] = comidaFavorita;
+alert (listaComidas);
 
 /*
 === Resposta Atividade 3 ===
