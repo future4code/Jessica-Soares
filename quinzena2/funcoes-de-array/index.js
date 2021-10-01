@@ -40,21 +40,65 @@ const cachorrosSalsicha = pets.filter((item) => {
  console.log(cachorrosSalsicha)
 
 /*
-=== Resposta exercício 1.c (não consegui finalizar)===
+=== Resposta exercício 1.c ===
+
+=== Como havia feito (Imprime os dois nomes de cachorro Poodle na mesma frase, como string) ===
 */
 
-// const cachorrosPoodle = pets.filter((item) => {
-//     return item.raca === "Poodle"
-// }).map((item) => {
-//     return item.nome
-// })
+const cachorrosPoodle = pets.filter((item) => {
+    return item.raca === "Poodle"
+}).map((item) => {
+    return item.nome
+})
 
-// console.log("Você ganhou um cupom de desconto de 10% para tosar o/a " + cachorrosPoodle)
-/*Imprime os dois nomes de cachorro Poodle na mesma frase"*/
+console.log("Você ganhou um cupom de desconto de 10% para tosar o/a " + cachorrosPoodle)
+
+/*
+Ou assim:
+*/
+
+const cachorrosPoodle = pets.filter((item) => {
+    return item.raca === "Poodle"
+})
+
+const apenasNomes = cachorrosPoodle.map((item) => {
+    return item.nome
+})
+
+console.log("Você ganhou um cupom de desconto de 10% para tosar o/a " + apenasNomes)
+
+/* 
+=== Como deve ser (imprime array) === 
+*/
+
+const cachorrosPoodle = pets.filter((item) => {
+    return item.raca === "Poodle"
+})
+
+const apenasNomes = cachorrosPoodle.map((item) => {
+    return console.log ("Você ganhou um cupom de desconto de 10% para tosar o/a " + item.nome)
+})
+
+/*
+Ou assim:
+*/
+
+const selecionarSoPoodles = pets.filter((item) => {
+    return item.raca == "Poodle"
+})
+
+function imprimeMensagem(item){
+    return "Você ganhou desconto para tosar o/a " + item.nome
+   }
+
+const mensagemDogsPoodle = selecionarSoPoodles.map(imprimeMensagem)
+
+console.log(mensagemDogsPoodle)
 
 /*
 === Resposta exercício 2.a ===
 */
+
 const produtos = [
     { nome: "Alface Lavada", categoria: "Hortifruti", preco: 2.5 },
     { nome: "Guaraná 2l", categoria: "Bebidas", preco: 7.8 },
@@ -75,10 +119,16 @@ const nomeProdutos = produtos.map((item) => {
 console.log(nomeProdutos)
 
 /*
-=== Resposta exercício 2.b (não consegui fazer) ===
+=== Resposta exercício 2.b ===
 */
 
+const produtosLista = produtos.map((item) => {
+    return item.nome
+})
 
+const precoProdutosLista = produtos.map((item) => {
+    return console.log(item.nome + " " + item.preco * 0.95)
+})
 
 /*
 === Resposta exercício 2.c ===
@@ -91,17 +141,34 @@ const categoriaBebidas = produtos.filter((item, index, array) => {
 console.log(categoriaBebidas)
 
 /*
-=== Resposta exercício 2.d (não consegui fazer) ===
+=== Resposta exercício 2.d ===
+
+=== Como havia feito (imprime "false") ===
 */
 
-// const nomes = produtos.map((item) => {
-//     return item.nome
-// })
-// const confereYpe = nomes.includes("Ypê")
+const nomes = produtos.map((item) => {
+    return item.nome
+})
+const confereYpe = nomes.includes("Ypê")
 
-// console.log(nomes)
-// console.log(confereYpe)
+console.log(confereYpe)
 
 /*
-=== Resposta exercício 2.e (não consegui fazer) ===
+=== Como deve ser ===
 */
+
+const produtosYpe = produtos.filter((item) => {
+    return item.nome.includes("Ypê")
+})
+console.log(produtosYpe)
+
+/*
+=== Resposta exercício 2.e ===
+*/
+const produtosYpe = produtos.filter((item) => {
+    return item.nome.includes("Ypê")
+})
+
+const precoProdutosYpe = produtosYpe.filter((item) => {
+    return console.log("Compre " + item.nome + " por " + item.preco)
+})
