@@ -57,7 +57,6 @@ function retornaQuantidadeElementos(array) {
   const quantidadeElementos = array.length
   
   return quantidadeElementos
-  
 }
 
 // EXERCÍCIO 06
@@ -119,10 +118,10 @@ function comparaDoisNumeros(num1, num2) {
 
   let diferenca = maiorNumero - menorNumero
    
-return {
-  maiorNumero: maiorNumero,
-  maiorDivisivelPorMenor: maiorDivisivelPorMenor,
-  diferenca: diferenca
+  return {
+    maiorNumero: maiorNumero,
+    maiorDivisivelPorMenor: maiorDivisivelPorMenor,
+    diferenca: diferenca
   }
 }
 
@@ -137,9 +136,6 @@ function segundoMaiorEMenor(array) {
 
   novoArray.push(segundoMaior)
   novoArray.push(segundoMenor)
-  
-  
-  console.log(novoArray)
 
   return novoArray
 }
@@ -159,8 +155,8 @@ function filmeFavorito() {
     ano: 2006,
     diretor: "David Frankel",
     atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"]
-    }
   }
+}
 
 // EXERCÍCIO 13
 function imprimeChamada() {
@@ -169,7 +165,7 @@ function imprimeChamada() {
       ano: 2006,
       diretor: "David Frankel",
       atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"]
-      }
+    }
     return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`
 }
 
