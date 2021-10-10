@@ -127,21 +127,29 @@ return {
 }
 
 // EXERCÍCIO 10
-//Não consegui fazer
 function segundoMaiorEMenor(array) {
-  let numeros = []
-  numeros.sort()
-  const segundoMaior = array.length - 2
-    return segundoMaior
+  let novoArray = []
+  
+  array.sort((a, b) => a - b)
+  
+  let segundoMaior = array[array.length - 2]
+  let segundoMenor = array[1]
 
+  novoArray.push(segundoMaior)
+  novoArray.push(segundoMenor)
+  
+  
+  console.log(novoArray)
+
+  return novoArray
 }
 
 // EXERCÍCIO 11
-//Não consegui fazer
 function ordenaArray(array) {
-  let numeros = []
-  numeros.sort(array)
-  return numeros
+  
+  array.sort((a, b) => a - b)
+  
+  return array
 }
 
 // EXERCÍCIO 12
