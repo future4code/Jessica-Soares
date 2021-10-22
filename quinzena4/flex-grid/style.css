@@ -1,0 +1,49 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Times New Roman'; 
+}
+
+.topo{
+    font-size: 20px;
+    background-color: mediumvioletred;
+    display: grid;
+    grid-template-columns: 1fr 1fr 100px;
+}
+
+.menu{
+    font-size: 17px;
+    background-color: #f2d0e0;
+    line-height: 2;
+    width: 20%;
+    height: 650px;
+    float: left;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.bolos{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 5px;
+    justify-items: center;
+}
+
+.rodape{
+    background-color: mediumvioletred;
+    text-align: center;
+    font-size: 17px;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
