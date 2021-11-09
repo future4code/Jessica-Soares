@@ -1,0 +1,56 @@
+.nome-lojinha{
+    color: #87CEFA;
+    text-shadow:#000 1px -1px, #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
+}
+
+body{
+    background-color:thistle;   
+}
+.pagina-inicial{
+    color: #4682B4;
+}
+
+h3{
+    color: #4682B4;
+}
+
+.foto-BTS img{
+    border:4px solid #ADD8E6;
+}
+
+.centro{
+    background-image: url(img/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+}
+
+table, th, td {
+    color: #3c75aa;
+    border: 1px solid #4682B4;
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+    padding:15px;
+    margin:auto;
+}
+
+.formulario{
+    color: #4682B4;
+}
+
+ul{
+    color: #4682B4;
+    margin: auto;
+    list-style-type: none;
+}
+
+header{
+    color:#00008B;
+    font-size: 13px;
+}
+
+footer{
+    color:#00008B;
+    font-size: 13px;
+}
