@@ -10,7 +10,7 @@ function App() {
     alert("O vídeo está sendo reproduzido")
 }
 
-<button onClick={reproduzVideo}></button>
+
 
   return (
     <div>
@@ -36,34 +36,42 @@ function App() {
                 <div className="box-pagina-principal media1" onclick="reproduzVideo()">
                     <img src="https://picsum.photos/400/400?a=1 " alt="" />
                     <h4>{titulo}</h4>
+                    reproduzVideo={reproduzVideo}
                 </div>
                 <div className="box-pagina-principal media2" onclick="reproduzVideo()">
                     <img src="https://picsum.photos/400/400?a=2 " alt="" />
                     <h4>{titulo}</h4>
+                    reproduzVideo={reproduzVideo}
                 </div>
                 <div className="box-pagina-principal media3" onclick="reproduzVideo()">
                     <img src="https://picsum.photos/400/400?a=3 " alt="" />
                     <h4>{titulo}</h4>
+                    reproduzVideo={reproduzVideo}
                 </div>
                 <div className="box-pagina-principal media4" onclick="reproduzVideo()">
                     <img src="https://picsum.photos/400/400?a=4 " alt="" />
                     <h4>{titulo}</h4>
+                    reproduzVideo={reproduzVideo}
                 </div>
                 <div className="box-pagina-principal media5" onclick="reproduzVideo()">
                     <img src="https://picsum.photos/400/400?a=5 " alt="" />
                     <h4>{titulo}</h4>
+                    reproduzVideo={reproduzVideo}
                 </div>
                 <div className="box-pagina-principal media6" onclick="reproduzVideo()">
                     <img src="https://picsum.photos/400/400?a=6 " alt="" />
                     <h4>{titulo}</h4>
+                    reproduzVideo={reproduzVideo}
                 </div>
                 <div className="box-pagina-principal media7" onclick="reproduzVideo()">
                     <img src="https://picsum.photos/400/400?a=7 " alt="" />
                     <h4>{titulo}</h4>
+                    reproduzVideo={reproduzVideo}
                 </div>
                 <div className="box-pagina-principal media8" onclick="reproduzVideo()">
                     <img src="https://picsum.photos/400/400?a=8 " alt="" />
                     <h4>{titulo}</h4>
+                    reproduzVideo={reproduzVideo}
                 </div>
             </section>
         </main>

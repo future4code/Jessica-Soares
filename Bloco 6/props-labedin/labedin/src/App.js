@@ -8,17 +8,41 @@ import logoUfrn from './img/logo-ufrn.png';
 import logoCaixa from './img/logo-caixa.png';
 import email from './img/email.png'
 import endereço from './img/endereço.jpg'
+import styled from 'styled-components'
+
+const BigCard = styled.div`
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 20px 10px;
+  margin-bottom: 10px;
+  height: 200px;
+`;
+
+const FotoBigCard = styled.image`
+  width: 70px;
+  margin-right: 10px;
+  border-radius: 50%;
+`;
+
+const TextoBigCard = styled.div`
+  margin-bottom: 15px;
+`;
 
 function App() {
   return (
     <div className="App">
       <div className="page-section-container">
         <h2>Dados pessoais</h2>
-        <CardGrande 
-          imagem={foto} 
-          nome="Jéssica" 
-          descricao="Oi, eu sou Jéssica, bancária na CAIXA Econômica e futura desenvolvedora!"
-        />
+        <BigCard> 
+          <FotoBigCard><CardGrande imagem={foto} /> </FotoBigCard>
+          <TextoBigCard>
+            <CardGrande
+            nome="Jéssica"
+            descricao="Oi, eu sou Jéssica, atualmente bancária e futura desenvolvedora!"
+            />
+          </TextoBigCard>
+        </BigCard>
         
         <ImagemButton 
           imagem="https://image.flaticon.com/icons/png/512/117/117472.png" 
@@ -42,17 +66,21 @@ function App() {
 
       <div className="page-section-container">
         <h2>Experiências profissionais</h2>
-        <CardGrande 
-          imagem={logoUfrn} 
+        <BigCard>
+        <FotoBigCard><CardGrande imagem={logoUfrn} /></FotoBigCard>
+        <TextoBigCard>
+        <CardGrande
           nome="Universidade" 
           descricao="Formada em GPP na UFRN" 
         />
-        
+        </TextoBigCard>
+
         <CardGrande 
           imagem={logoCaixa}
           nome="CAIXA" 
           descricao="Bancária há sete anos" 
         />
+        </BigCard>
       </div>
 
       <div className="page-section-container">
