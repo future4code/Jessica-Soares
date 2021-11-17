@@ -26,4 +26,3 @@ const ImagemButtonContainer = styled.img `
     width: 30px;
     margin-right: 10px;
 `
-    

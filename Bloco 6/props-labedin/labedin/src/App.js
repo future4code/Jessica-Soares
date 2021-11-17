@@ -9,8 +9,6 @@ import logoCaixa from './img/logo-caixa.png';
 import email from './img/email.png';
 import endereço from './img/endereço.jpg';
 
-
-
 function App() {
   return (
     <div className="App">
@@ -21,7 +19,6 @@ function App() {
           nome="Jéssica S"
           descricao="Oi, eu sou Jéssica, atualmente bancária e futura desenvolvedora!"
         />  
-        
         
         <ImagemButton 
           imagem="https://image.flaticon.com/icons/png/512/117/117472.png" 
@@ -51,7 +48,6 @@ function App() {
           descricao="Formada em GPP na UFRN" 
         />
         
-
         <CardGrande 
           imagem={logoCaixa}
           nome="CAIXA" 
