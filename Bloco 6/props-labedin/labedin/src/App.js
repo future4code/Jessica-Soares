@@ -18,7 +18,7 @@ function App() {
         <h2>Dados pessoais</h2>
         <CardGrande
           imagem={foto} 
-          nome="Jéssica S"
+          nome="Jéssica"
           descricao="Oi, eu sou Jéssica, atualmente bancária e futura desenvolvedora!"
         />  
         
