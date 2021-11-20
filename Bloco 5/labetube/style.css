@@ -60,3 +60,15 @@ footer{
 .texto{
     margin-top: 15px;
 }
+
+@media screen and (min-device-width: 320px) and (max-device-width: 480px){
+    nav{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        row-gap: 10px;
+        column-gap: 10px;
+        margin: 10px;
+        justify-items: center;
+    }
+}

@@ -48,7 +48,6 @@ class Post extends React.Component {
     numeroComentarios: 0
   }
 
-
   onClickCurtida = () => {
     
     let contadorCurtidas
@@ -77,7 +76,6 @@ class Post extends React.Component {
     })
   }
 
-
   render() {
     let iconeCurtida
 
@@ -92,7 +90,6 @@ class Post extends React.Component {
     if(this.state.comentando) {
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
     }
-
 
     return (
   
