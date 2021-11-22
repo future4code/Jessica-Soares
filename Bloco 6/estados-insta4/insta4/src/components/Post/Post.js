@@ -64,6 +64,7 @@ class Post extends React.Component {
     })
   }
     
+
   onClickComentario = () => {
     this.setState({
       comentando: !this.state.comentando
@@ -92,7 +93,6 @@ class Post extends React.Component {
     if(this.state.comentando) {
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
     }
-
 
     return (
   
