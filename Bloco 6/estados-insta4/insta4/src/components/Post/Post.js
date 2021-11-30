@@ -48,12 +48,22 @@ class Post extends React.Component {
     numeroComentarios: 0
   }
 
+
   onClickCurtida = () => {
-    console.log('Curtiu!')
+    
+    let contadorCurtidas
+    if(this.state.curtido){
+      contadorCurtidas = this.state.numeroCurtidas -1
+    } else{
+      contadorCurtidas= this.state.numeroCurtidas +1
+    }
+
     this.setState({
-    curtido: !this.state.curtido
+      curtido: !this.state.curtido,
+      numeroCurtidas: contadorCurtidas
     })
   }
+    
 
   onClickComentario = () => {
     this.setState({
@@ -67,6 +77,7 @@ class Post extends React.Component {
       numeroComentarios: this.state.numeroComentarios + 1
     })
   }
+
 
   render() {
     let iconeCurtida
@@ -92,50 +103,6 @@ class Post extends React.Component {
       </PostHeader>
 
       <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
-
-      <PostFooter>
-        <IconeComContador
-          icone={iconeCurtida}
-          onClickIcone={this.onClickCurtida}
-          valorContador={this.state.numeroCurtidas}
-        />
-
-        <IconeComContador
-          icone={iconeComentario}
-          onClickIcone={this.onClickComentario}
-          valorContador={this.state.numeroComentarios}
-        />
-      </PostFooter>
-      {componenteComentario}
-      
-      <PostHeader>
-        <UserPhoto src={this.props.fotoUsuario1} alt={'Imagem do usuario'}/>
-        <p>{this.props.nomeUsuario1}</p>
-      </PostHeader>
-
-      <PostPhoto src={this.props.fotoPost1} alt={'Imagem do post'}/>
-
-      <PostFooter>
-        <IconeComContador
-          icone={iconeCurtida}
-          onClickIcone={this.onClickCurtida}
-          valorContador={this.state.numeroCurtidas}
-        />
-
-        <IconeComContador
-          icone={iconeComentario}
-          onClickIcone={this.onClickComentario}
-          valorContador={this.state.numeroComentarios}
-        />
-      </PostFooter>
-      {componenteComentario}
-
-      <PostHeader>
-        <UserPhoto src={this.props.fotoUsuario2} alt={'Imagem do usuario'}/>
-        <p>{this.props.nomeUsuario2}</p>
-      </PostHeader>
-
-      <PostPhoto src={this.props.fotoPost2} alt={'Imagem do post'}/>
 
       <PostFooter>
         <IconeComContador
