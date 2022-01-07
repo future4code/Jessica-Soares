@@ -15,23 +15,41 @@ const Post = (props) => {
   const [numeroComentarios, setNumeroComentarios] = useState(0);
   const [comentarios, setComentarios] = useState([]);
 
-
   const onClickCurtida = () => {
     if (curtido) {
-      setCurtido(!curtido)
-	    setNumeroCurtidas(numeroCurtidas - 1)
+      setCurtido(false)
+	    setNumeroCurtidas(0)
       
     } else {
-      setCurtido(!curtido)
-	    setNumeroCurtidas(numeroCurtidas + 1)
+      setCurtido(true)
+	    setNumeroCurtidas(1)
     }
   };
 
   const onClickComentario = () => {
+    setComentando(!comentando)
   };
 
   const enviarComentario = (comentario) => {
-  }
+    setNumeroComentarios(numeroComentarios + 1);
+    const listaDeComentarios = [...comentarios, comentario];
+    setComentando(false);
+    setComentarios(listaDeComentarios)
+  };
+
+  const iconeCurtida = curtido ? (iconeCoracaoPreto) : (iconeCoracaoBranco)
+
+  const caixaDeComentario = comentando ? (
+    <SecaoComentario enviarComentario={enviarComentario}/>
+  ) : (
+    comentarios.map(comentario => {
+      return (
+        <CommentContainer>
+          <p>{comentario}</p>
+        </CommentContainer>
+      )
+    })
+  )
 
   return (
     <PostContainer>
@@ -44,20 +62,20 @@ const Post = (props) => {
 
       <PostFooter>
         <IconeComContador
-          // icone={iconeCurtida}
+          icone={iconeCurtida}
           onClickIcone={onClickCurtida}
-          // valorContador={numeroCurtidas}
+          valorContador={numeroCurtidas}
         />
 
         <IconeComContador
           icone={iconeComentario}
           onClickIcone={onClickComentario}
-          // valorContador={numeroComentarios}
+          valorContador={numeroComentarios}
         />
       </PostFooter>
-      {/* {caixaDeComentario} */}
+      {caixaDeComentario}
     </PostContainer>
   )
 }
 
-export default Post
+export default Post;
