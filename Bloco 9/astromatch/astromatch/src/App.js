@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { baseURL } from "./constantes/index";
 import TelaInicial from "./components/TelaInicial/TelaInicial";
 import TelaMatching from "./components/TelaMatching/TelaMatching";
+import { ChakraProvider, Button } from '@chakra-ui/react';
 
 
 const App = () => {
@@ -38,7 +39,12 @@ const App = () => {
   return (
     <div>
       {renderizarTela()}
-      <div><button onClick={ApagarMatches}>Apagar Matches</button></div>
+      <ChakraProvider>
+      <Button onClick={ApagarMatches} colorScheme='pink' variant='outline' left='75%' bottom='5%' position='absolute'>
+        Apagar matches
+      </Button>
+      </ChakraProvider>
+      
     </div>
   );
 }

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import { baseURL } from "../../constantes/index";
+import { ChakraProvider, Button } from '@chakra-ui/react';
 
 const MainContainer = styled.div`
 display: grid;
@@ -25,7 +26,9 @@ button {
 
 h1 {
   font-size: 45px;
-  color: #FF69B4;
+  background: -webkit-linear-gradient(left, #FF69B4 55%, #abd7a8 0%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 `
 
@@ -73,7 +76,9 @@ function TelaMatching(props) {
   return (
     <MainContainer>
     <Barra>
-      <button onClick={() => props.trocaTela('inicial')}>Tela Inicial</button>
+      <ChakraProvider>
+      <Button onClick={() => props.trocaTela('inicial')} colorScheme='pink' variant='solid'>Início</Button>
+      </ChakraProvider>
       <h1>Deu Match</h1>
     </Barra>
     <MatchesContainer>

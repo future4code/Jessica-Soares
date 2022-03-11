@@ -2,43 +2,73 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { baseURL} from "../../constantes/index";
 import styled from "styled-components";
+import Like from "../../imagens/like.jpg";
+import Dislike from "../../imagens/dislike.png";
+import { ChakraProvider, Spinner } from '@chakra-ui/react';
+
 
 const ImagemContainer = styled.div`
-height: 350px;
-width: 250px;
+height: 400px;
+width: 400px;
 position: center;
 margin: auto;
-display: block;
+position: relative;
 `
 
 const Imagem = styled.img`
 height: 100%;
 width: 100%;
+border: none;
+border-radius: 5px;
+box-shadow: 0 0 1px grey;
 object-fit: contain;
-box-shadow: 0px 0px 5px 5px grey; 
+position: absolute;
+z-index: 1;
 `
 
-const Nome = styled.div`
-font-sixe: 20px;
+const ImagemBackground = styled.img`
+filter: blur(20px);
+position: relative;
+border: 1px solid grey;
+height: 100%;
+width: 100%;
+`
+
+const Nome = styled.text`
+font-size: 20px;
 font-weight: bold;
-margin: 15px 15px;
+position: absolute;
+left: 20px;
+top: 310px;
+color: white;
+z-index: 2;
 `
 
-const Descricao = styled.div`
-margin-left: 15px;
+const Descricao = styled.text`
+font-size: 15px;
+position: absolute;
+left: 20px;
+top: 350px;
+color: white;
+z-index: 2;
 `
 
-const BotaoContainer = styled.div`
+const BotaoContainer = styled.text`
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 15px 70px 0px 70px;
+padding: 15px 90px 0px 90px;
 
 
 button {
   height: 25px;
 }
+
+img {
+  height: 40px;
+}
 `
+
 
 function Card() {
   const [pessoa, setPessoa] = useState({})
@@ -85,25 +115,27 @@ const dislike = () => {
 
 
   return (
+    <ChakraProvider>
     <div>
       {pessoa ? (
         <>
     <ImagemContainer>
     <Imagem src={pessoa.photo} alt="Foto"/>
-    </ImagemContainer>
-
+    <ImagemBackground src={pessoa.photo}/>
     <Nome>{pessoa.name}, {pessoa.age}</Nome>
     <Descricao>{pessoa.bio}</Descricao>
+    </ImagemContainer>
 
     <BotaoContainer>
-        <button onClick={like}>Curti</button>
-        <button onClick={dislike}>Não curti</button>
+        <button onClick={like}><img src={Like} height='5px'/></button>
+        <button onClick={dislike}><img src={Dislike} height='5px'/></button>
     </BotaoContainer>
     </>
       ):(
-        <p>Carregando...</p>
+      <Spinner color='pink' size='xl' left='45%' position='relative'/>
     )}
     </div>
+    </ChakraProvider>
   );
 }
 

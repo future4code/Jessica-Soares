@@ -1,12 +1,15 @@
 import React from "react";
 import styled from 'styled-components';
 import Card from "../Card/Card";
+import { ChakraProvider, Button } from '@chakra-ui/react';
+
 
 const MainContainer = styled.div`
 display: grid;
 margin: auto;
+margin-top: 10px;
 border: 2px solid grey;
-height: 600px;
+height: 580px;
 width: 450px;
 `
 
@@ -24,7 +27,9 @@ button {
 
 h1 {
   font-size: 45px;
-  color: #FF69B4;
+  background: -webkit-linear-gradient(left, #FF69B4 60%, #abd7a8 0%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 `
 
@@ -33,7 +38,11 @@ function TelaInicial(props) {
     <MainContainer>
     <Barra>
       <h1>Astromatch</h1>
-      <button onClick={() => props.trocaTela("match")}>Lista</button>
+      <ChakraProvider>
+      <Button onClick={() => props.trocaTela("match")} colorScheme='pink' variant='solid'>
+        Lista
+      </Button>
+      </ChakraProvider>
     </Barra>
     <Card />
     </MainContainer>
