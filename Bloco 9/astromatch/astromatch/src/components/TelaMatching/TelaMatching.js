@@ -7,8 +7,9 @@ import { ChakraProvider, Button } from '@chakra-ui/react';
 const MainContainer = styled.div`
 display: grid;
 margin: auto;
-border: 2px solid black;
-height: 600px;
+margin-top: 10px;
+border: 2px solid grey;
+height: 580px;
 width: 450px;
 `
 

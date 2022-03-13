@@ -11,8 +11,8 @@ const ImagemContainer = styled.div`
 height: 400px;
 width: 400px;
 position: center;
-margin: auto;
 position: relative;
+margin: auto;
 `
 
 const Imagem = styled.img`
