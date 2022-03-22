@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./exercicio1.js",
-    "start2": "node ./exercicio2.js"
+    "start2": "node ./exercicio2.js",
+    "start3": "node ./exercicio3.js"
   },
   "author": "Jessica Soares",
   "license": "ISC"

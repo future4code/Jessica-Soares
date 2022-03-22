@@ -1,15 +1,16 @@
-const num1 = Number(process.argv[2]);
-const num2 = Number(process.argv[3]);
+const operacao = process.argv[2];
+const num1 = Number(process.argv[3]);
+const num2 = Number(process.argv[4]);
 
-const operacao = "add"
+let resultado = "O resultado é "
 
 switch(operacao){
 	case "add":
-		num1 + num2
+		resultado += num1 + num2 // O "+" adiciona a string "O resultado é "
 		break;
 	case "subt":
-		num1 - num2
+		resultado += num1 - num2
 		break;
 }
 
-console.log(operacao)
+console.log(resultado)
