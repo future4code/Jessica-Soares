@@ -19,7 +19,7 @@ app.get('/users', (request: Request, response: Response) => {
     response.status(210).send(clients);
  });
 
- //Adicionar contas e validar de idade
+ //Adicionar contas e validar idade
 
  const Errors: { [chave: string]: { status: number, message: string } } = {
     MISSING_NAME: {status: 400, message: "Favor informar nome no body."},
