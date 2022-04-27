@@ -1,0 +1,11 @@
+###  //  buscar todas os users 
+GET http://localhost:3003/users
+
+### // filtrar por nome
+
+GET http://localhost:3003/user?name=Paula
+
+### // filtrar por type
+
+GET http://localhost:3003/type/Teacher
+
