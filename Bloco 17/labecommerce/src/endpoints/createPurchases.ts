@@ -17,15 +17,21 @@ app.use(cors());
       const userId = req.body.user_id;
       const productId = req.body.product_id;
       const quantityPurchased = req.body.quantity;
-      const totalPrice = req.body.quantity * price;
+     
+
+      let product = await connection("labecommerce_products").where({
+        id: productId
+      }) 
+      
+      const total_price = req.body.quantity * product[0].price
       
 
       await connection("labecommerce_purchases").insert({
         id: purchaseId,
         user_id: userId,
         product_id: productId,
-        quantity: quantityPurchased,
-        total_price: totalPrice
+        quantity: Number(quantityPurchased),
+        total_price: total_price
       });
 
 
