@@ -1,10 +1,7 @@
-import { app } from "./app"
-import { createUser } from './endpoints/createUser'
-import { createTask } from './endpoints/createTask'
+import { app } from "./controller/app"
+import { UserController } from "./controller/UserController"
 
 
-app.post('/user', createUser)
+const userController = new UserController()
 
-app.post('/task', createTask)
-
-
+app.post("/createUser", userController.createUser)
