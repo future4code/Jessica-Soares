@@ -7,3 +7,10 @@ Content-Type: application/json
 	"email": "michael@dundermifflin.com",
 	"password": "theboss"	
 }
+
+###
+GET http://localhost:3003/all 
+
+###
+DELETE http://localhost:3003/40b116df-5eb5-476f-8392-5887d8cf4590
+
