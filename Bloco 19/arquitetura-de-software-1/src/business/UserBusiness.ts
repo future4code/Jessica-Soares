@@ -1,8 +1,10 @@
 import { v4 as generateId } from "uuid";
 import { UserDatabase } from "../data/UserDataBase";
+import { user } from "../types/user";
 
 
 export class UserBusiness {
+
 public createUser = async (input: any) => {
    try {
      const { name, email, password } = input;
@@ -27,4 +29,20 @@ public createUser = async (input: any) => {
    }
  };
 
+ async get(): Promise<user[]>  {
+				
+  return await new UserDatabase().get();
+  }
+
+  async deleteUser(input: {id:string}) {
+				
+    if(!input.id){
+      throw new Error("Insira um id!")
+    }
+
+    return await new UserDatabase().deleteUser(input.id);
+  }
 }
+
+
+
