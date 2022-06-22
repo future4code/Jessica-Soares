@@ -10,30 +10,29 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserBusiness = void 0;
+const UserDatabase_1 = require("../data/UserDatabase");
 const uuid_1 = require("uuid");
-const UserDataBase_1 = require("../data/UserDataBase");
+const userDatabase = new UserDatabase_1.UserDatabase();
 class UserBusiness {
-    constructor() {
-        this.createUser = (input) => __awaiter(this, void 0, void 0, function* () {
-            try {
-                const { name, email, password } = input;
-                if (!name || !email || !password) {
-                    throw new Error('Preencha os campos "name", "email" e "password"');
-                }
-                const id = (0, uuid_1.v4)();
-                const userDatabase = new UserDataBase_1.UserDatabase();
-                yield userDatabase.insertUser({
-                    id,
-                    name,
-                    email,
-                    password,
-                });
+    create({ email, name, password }) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (!email || !name || !password) {
+                throw new Error("Dados inválidos (email, name, password)");
             }
-            catch (error) {
-                throw new Error(error.message);
-            }
+            const id = (0, uuid_1.v4)();
+            yield userDatabase.create({
+                id,
+                name,
+                email,
+                password,
+            });
+        });
+    }
+    findAll() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const result = yield userDatabase.findAll();
+            return result;
         });
     }
 }
 exports.UserBusiness = UserBusiness;
-//# sourceMappingURL=UserBusiness.js.map

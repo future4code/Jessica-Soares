@@ -11,24 +11,30 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserController = void 0;
 const UserBusiness_1 = require("../business/UserBusiness");
+const userBusiness = new UserBusiness_1.UserBusiness();
 class UserController {
-    constructor() {
-        this.createUser = (req, res) => __awaiter(this, void 0, void 0, function* () {
+    create(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
             try {
-                const input = {
-                    email: req.body.email,
-                    name: req.body.name,
-                    password: req.body.password
-                };
-                const userBusiness = new UserBusiness_1.UserBusiness;
-                userBusiness.createUser(input);
-                res.status(201).send({ message: "Usuário criado!" });
+                const { email, name, password } = req.body;
+                yield userBusiness.create({ email, name, password });
+                res.status(201).send({ message: "Usuário cadastrado com sucesso" });
             }
             catch (error) {
-                res.status(400).send({ error: error.message });
+                res.status(400).send(error.message);
+            }
+        });
+    }
+    findAll(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const result = yield userBusiness.findAll();
+                res.status(201).send({ result });
+            }
+            catch (error) {
+                res.status(400).send(error.message);
             }
         });
     }
 }
 exports.UserController = UserController;
-//# sourceMappingURL=UserController.js.map

@@ -10,24 +10,28 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserDatabase = void 0;
-const BaseDataBase_1 = require("./BaseDataBase");
-class UserDatabase extends BaseDataBase_1.BaseDatabase {
-    constructor() {
-        super(...arguments);
-        this.insertUser = (user) => __awaiter(this, void 0, void 0, function* () {
-            try {
-                yield UserDatabase.connection.insert({
-                    id: user.id,
-                    name: user.name,
-                    email: user.email,
-                    password: user.password
-                }).into("User_Arq");
-            }
-            catch (error) {
-                throw new Error(error.sqlMessage || error.message);
-            }
+const User_1 = require("../types/User");
+const BaseDatabase_1 = require("./BaseDatabase");
+class UserDatabase extends BaseDatabase_1.BaseDatabase {
+    create({ id, name, email, password }) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield UserDatabase.connection
+                .insert({
+                id,
+                name,
+                email,
+                password,
+            })
+                .into(UserDatabase.TABLE_NAME);
+        });
+    }
+    findAll() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const users = yield UserDatabase.connection(UserDatabase.TABLE_NAME);
+            const result = users.map(user => new User_1.User(user.id, user.name, user.email, user.password));
+            return result;
         });
     }
 }
 exports.UserDatabase = UserDatabase;
-//# sourceMappingURL=UserDataBase.js.map
+UserDatabase.TABLE_NAME = "LABEFLIX_USER";
