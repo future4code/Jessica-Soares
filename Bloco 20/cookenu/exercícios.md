@@ -1,6 +1,6 @@
 ### Exercício ###
 
-# Endepoints:
+# Endpoints:
 
 1. **Cadastro**
     
