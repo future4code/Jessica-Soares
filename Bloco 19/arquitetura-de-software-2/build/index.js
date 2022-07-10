@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const app_1 = require("./controller/app");
-const UserController_1 = require("./controller/UserController");
-const userController = new UserController_1.UserController();
-app_1.app.post("/createUser", userController.createUser);
-//# sourceMappingURL=index.js.map
+const app_1 = require("./app");
+const movieRouter_1 = require("./routes/movieRouter");
+const userRouter_1 = require("./routes/userRouter");
+app_1.app.use("/user", userRouter_1.userRouter);
+app_1.app.use("/movie", movieRouter_1.movieRouter);
