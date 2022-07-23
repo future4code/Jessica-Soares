@@ -1,0 +1,8 @@
+
+CREATE TABLE IF NOT EXISTS Produtos_amaro (
+    id VARCHAR(64) PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    tag VARCHAR(64) NOT NULL
+);
+
+
