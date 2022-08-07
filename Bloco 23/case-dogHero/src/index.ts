@@ -1,6 +1,6 @@
 import app from "./controller/app"
-import { ProductRouter } from "./controller/ProductRouter"
+import { PasseioRouter } from "./controller/PasseioRouter"
 
 
-app.use('/product/', ProductRouter)
+app.use('/passeio/', PasseioRouter)
 
