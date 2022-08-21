@@ -1,6 +1,6 @@
 import app from "./controller/app"
-import { JogoRouter } from "./controller/JogoRouter"
+import { CompeticaoRouter } from "./controller/CompeticaoRouter"
 
 
-app.use('/jogo/', JogoRouter)
+app.use('/competicao/', CompeticaoRouter)
 
