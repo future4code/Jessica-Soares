@@ -42,13 +42,10 @@ height: 100px;
 
 const Tarot = () => {
 
-    const [image, setImage] = useState("")
     const [data, setData] = useState(undefined)
     const [carta, setCarta] = useState(true)
     const [cartas, setCartas] = useState([])
-    const [pickedCard, setPickedCard] = useState([])
-    const [open, setOpen] = useState(false);
-
+   
 
     const getData = () => {
         axios
@@ -81,15 +78,6 @@ const Tarot = () => {
     embaralharCartas()
 }
 
-const handleClickOpen = () => {
-  setOpen(true);
-};
-
-
-const pickCard = (carta) => {
-  setPickedCard(carta)
-  handleClickOpen(carta)
-}
 
   const mostrarCartas = cartas && cartas.map((carta) => {
       return (
